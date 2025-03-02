@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulsa Kayaking - Adventure Awaits</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="nav-logo">TK</div>
+            <button class="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#features">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#cleanup">Cleanup Day</a>
+                <a href="#location">Location</a>
+                <a href="#safety">Safety</a>
+                <span class="status-badge">Call Now</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Tulsa Kayaking</h1>
+            <p class="tagline">A new adventure awaits in Tulsa</p>
+            
+            <form class="signup-form" id="signup-form" action="https://formspree.io/f/xdkaqwza" method="POST">
+                <input type="email" name="email" placeholder="Enter your email for location updates" required>
+                <!-- Honeypot field to prevent spam -->
+                <input type="text" name="_gotcha" style="display:none">
+                <button type="submit" id="submit-button">Stay Updated</button>
+            </form>
+            
+            <p class="coming-soon">Exciting news about our new location coming soon</p>
+            <p id="form-status" class="form-message"></p>
+        </div>
+    </div>
+
+    <div class="content">
+        <section class="features" id="features">
+            <div class="feature">
+                <h2>Experience</h2>
+                <p>Providing safe, sustainable, and memorable water adventures for all skill levels</p>
+            </div>
+            <div class="feature">
+                <h2>Equipment</h2>
+                <p>High-quality kayaks, paddleboards, and canoes for every adventure</p>
+            </div>
+            <div class="feature">
+                <h2>Safety First</h2>
+                <p>Certified staff, top-tier safety equipment, and comprehensive training</p>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <h2>Adventure Pricing</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Single Kayak</h3>
+                    <p class="price">$15/hour</p>
+                    <p class="price-detail">Half-day (4hrs): $50</p>
+                    <p class="price-detail">Full-day (8hrs): $90</p>
+                </div>
+                <div class="price-card">
+                    <h3>Tandem Kayak</h3>
+                    <p class="price">$25/hour</p>
+                    <p class="price-detail">Half-day (4hrs): $80</p>
+                    <p class="price-detail">Full-day (8hrs): $120</p>
+                </div>
+                <div class="price-card">
+                    <h3>Paddleboard</h3>
+                    <p class="price">$20/hour</p>
+                    <p class="price-detail">Half-day (4hrs): $50</p>
+                    <p class="price-detail">Full-day (8hrs): $90</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lake-updates">
+            <h2>Zink Lake Updates</h2>
+            <div class="updates-container">
+                <div class="latest-updates">
+                    <h3>Latest News</h3>
+                    <div class="update-list">
+                        <div class="update-item">
+                            <h4>Spring Season Hours Update</h4>
+                            <p class="update-date">February 28, 2025</p>
+                            <p>Starting April 1st, we'll be extending our hours from sunrise to sunset to accommodate more paddlers.</p>
+                        </div>
+                        <div class="update-item">
+                            <h4>New Kayak Launch Points</h4>
+                            <p class="update-date">March 1, 2025</p>
+                            <p>We're excited to announce new kayak launch points at both the 23rd Street and 17th Street parking lots.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rss-subscription">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to receive the latest updates about Zink Lake directly in your inbox.</p>
+                    <form class="signup-form" action="https://formspree.io/f/xdkaqwza" method="POST">
+                        <input type="email" name="email" placeholder="Enter your email for updates" required>
+                        <input type="text" name="_gotcha" style="display:none">
+                        <button type="submit" class="subscribe-button">
+                            <i class="fas fa-envelope"></i>
+                            Subscribe for Updates
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="cleanup-event" id="cleanup">
+            <div class="calendar-container">
+                <div class="calendar-date">
+                    <span class="month">JULY</span>
+                    <span class="day">21</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="calendar-details">
+                    <h2>Annual River Cleanup Day</h2>
+                    <p class="event-time">8:00 AM - 2:00 PM</p>
+                    <div class="event-highlights">
+                        <p>Join us for a day of community service and free kayaking! All volunteers receive:</p>
+                        <ul>
+                            <li>Free kayak rental for the day</li>
+                            <li>Cleanup supplies provided</li>
+                            <li>Refreshments & snacks</li>
+                            <li>Community service certificate</li>
+                        </ul>
+                        <p class="achievement">Last year we collected over 500 pounds of trash!</p>
+                    </div>
+                    <button class="rsvp-button" onclick="alert('RSVP feature coming soon!')">RSVP for Cleanup Day</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="location" id="location">
+            <h2>Parking & Access</h2>
+            <div class="location-info">
+                <div class="parking-details">
+                    <h3>Easy Access Parking</h3>
+                    <p>Convenient parking available at:</p>
+                    <ul>
+                        <li>23rd Street parking lot</li>
+                        <li>17th Street parking lot</li>
+                    </ul>
+                    <p>Both locations offer direct water access and equipment drop-off points</p>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.8835456083824!2d-95.99424400000001!3d36.129386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDA3JzQ1LjgiTiA5NcKwNTknMzkuMyJX!5e0!3m2!1sen!2sus!4v1709434150000!5m2!1sen!2sus&markers=icon:https://maps.google.com/mapfiles/kml/shapes/sailing.png%7C36.129386,-95.994244"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="safety-checklist" id="safety">
+            <h2>Safety Checklist</h2>
+            <p class="checklist-intro">Use this checklist to prepare for your adventure</p>
+            <div class="checklist-container">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">I can swim and feel comfortable in water</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item2">
+                    <label for="item2">I will wear a properly fitted life jacket at all times</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item3">
+                    <label for="item3">I will check weather conditions before my trip</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item4">
+                    <label for="item4">I will bring water and sun protection</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item5">
+                    <label for="item5">I will follow staff instructions during safety briefing</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item6">
+                    <label for="item6">I will respect wildlife and maintain safe distances</label>
+                </div>
+            </div>
+            <div class="checklist-status">
+                <span id="checklist-progress">0/6 completed</span>
+                <button id="reset-checklist" type="button">Reset Checklist</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Email form handling
+        const form = document.getElementById('signup-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Thanks for subscribing! We\'ll keep you updated.';
+                    formStatus.className = 'form-message success';
+                    form.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                formStatus.textContent = 'Oops! There was a problem. Please try again.';
+                formStatus.className = 'form-message error';
+            }
+
+            submitButton.disabled = false;
+            submitButton.textContent = 'Stay Updated';
+        });
+
+        // Safety Checklist Functionality
+        const checklistItems = document.querySelectorAll('.checklist-item input');
+        const progressText = document.getElementById('checklist-progress');
+        const resetButton = document.getElementById('reset-checklist');
+
+        function updateProgress() {
+            const checked = document.querySelectorAll('.checklist-item input:checked').length;
+            progressText.textContent = `${checked}/6 completed`;
+        }
+
+        checklistItems.forEach(item => {
+            item.addEventListener('change', updateProgress);
+        });
+
+        resetButton.addEventListener('click', () => {
+            checklistItems.forEach(item => {
+                item.checked = false;
+            });
+            updateProgress();
+        });
+
+        // Mobile Menu and Navigation Functionality
+        const hamburgerButton = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const navAnchors = document.querySelectorAll('.nav-links a');
+
+        hamburgerButton.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking a link
+        navAnchors.forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 767 && 
+                !navLinks.contains(e.target) && 
+                !hamburgerButton.contains(e.target) &&
+                navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,824 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* This accounts for the fixed nav bar */
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.hamburger-menu:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.status-badge {
+    background: #0071e3;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+    padding-top: 80px;
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.4), 
+        rgba(0, 113, 227, 0.5)
+    ),
+    url('https://images.pexels.com/photos/3230588/pexels-photo-3230588.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(4px) saturate(150%);
+    -webkit-backdrop-filter: blur(4px) saturate(150%);
+    padding: 2.5rem;
+    border-radius: 24px;
+    background: rgba(26, 26, 26, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tagline {
+    font-size: 1.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+.content {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 4rem 2rem;
+}
+
+.features {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: rgba(0, 113, 227, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.feature p {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+}
+
+.pricing {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.price-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0071e3;
+    margin-bottom: 1rem;
+}
+
+.price-detail {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+}
+
+.location-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parking-details {
+    background: rgba(0, 113, 227, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.parking-details h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.parking-details p {
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+}
+
+.parking-details ul {
+    list-style-type: none;
+    margin: 1rem 0;
+}
+
+.parking-details li {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.parking-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0071e3;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="email"] {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1.25rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    background-color: #ffffff;
+    color: #0071e3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.coming-soon {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media (min-width: 768px) {
+    .signup-form {
+        flex-direction: row;
+    }
+    
+    button {
+        width: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.25rem;
+    }
+    
+    .pricing h2,
+    .location h2 {
+        font-size: 2rem;
+    }
+    
+    .price {
+        font-size: 1.75rem;
+    }
+    
+    .feature,
+    .price-card,
+    .parking-details {
+        padding: 1.5rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .status-badge {
+        margin: 0.5rem 0;
+    }
+
+    .nav-content {
+        padding: 0 1rem;
+    }
+}
+
+.safety-checklist {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+    background: rgba(0, 113, 227, 0.05);
+    border-radius: 16px;
+}
+
+.safety-checklist h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.checklist-intro {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.checklist-container {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checklist-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0071e3;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checklist-item label {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex: 1;
+}
+
+.checklist-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#checklist-progress {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#reset-checklist {
+    background-color: transparent;
+    color: #0071e3;
+    border: 1px solid #0071e3;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+#reset-checklist:hover {
+    background-color: rgba(0, 113, 227, 0.1);
+}
+
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (min-width: 1024px) {
+    .location-info {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+.form-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.form-message.success {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-message.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.cleanup-event {
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0, 113, 227, 0.95), rgba(26, 26, 26, 0.98));
+    color: white;
+}
+
+.calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-date {
+    background: #0071e3;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    position: relative;
+}
+
+.calendar-date::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 20px solid #0071e3;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+.month {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.day {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.5rem 0;
+}
+
+.year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.calendar-details {
+    padding: 2.5rem;
+    flex: 1;
+}
+
+.calendar-details h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.event-time {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.event-highlights {
+    margin: 2rem 0;
+}
+
+.event-highlights p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.event-highlights ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.event-highlights li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.event-highlights li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0071e3;
+}
+
+.achievement {
+    background: rgba(0, 113, 227, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+    
+    .calendar-date {
+        padding: 1.5rem;
+    }
+    
+    .calendar-date::after {
+        display: none;
+    }
+    
+    .calendar-details {
+        padding: 1.5rem;
+    }
+    
+    .event-highlights ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lake-updates {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+}
+
+.lake-updates h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.updates-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.latest-updates h3,
+.rss-subscription h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.update-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.update-item {
+    background: rgba(0, 113, 227, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.update-item:hover {
+    transform: translateY(-3px);
+}
+
+.update-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.update-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.update-item p:not(.update-date) {
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.rss-subscription {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+}
+
+.rss-subscription p {
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.rss-subscription .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rss-subscription input[type="email"] {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    color: #1a1a1a;
+}
+
+.rss-subscription input[type="email"]::placeholder {
+    color: #666;
+}
+
+.rss-subscription .subscribe-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #0071e3;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.rss-subscription .subscribe-button:hover {
+    background: #0062c3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+}
+
+.rss-subscription .subscribe-button i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .updates-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .rss-subscription {
+        position: static;
+    }
+    
+    .lake-updates h2 {
+        font-size: 2rem;
+    }
+} 
