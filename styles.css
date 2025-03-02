@@ -93,13 +93,8 @@ html {
 }
 
 .hero {
-    padding-top: 80px;
-    background: linear-gradient(
-        rgba(26, 26, 26, 0.4), 
-        rgba(0, 113, 227, 0.5)
-    ),
-    url('https://images.pexels.com/photos/3230588/pexels-photo-3230588.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center;
-    background-size: cover;
+    padding-top: 80px; /* Add space for fixed nav */
+    background: linear-gradient(135deg, #1a1a1a 0%, #0071e3 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -111,12 +106,6 @@ html {
     text-align: center;
     max-width: 600px;
     width: 100%;
-    backdrop-filter: blur(4px) saturate(150%);
-    -webkit-backdrop-filter: blur(4px) saturate(150%);
-    padding: 2.5rem;
-    border-radius: 24px;
-    background: rgba(26, 26, 26, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 h1 {
@@ -240,10 +229,9 @@ h1 {
 
 .location-info {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: start;
 }
 
 .parking-details {
@@ -251,6 +239,23 @@ h1 {
     padding: 2rem;
     border-radius: 12px;
     text-align: left;
+    height: 100%;
+}
+
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border: none;
 }
 
 .parking-details h3 {
@@ -412,6 +417,198 @@ button:hover {
     .nav-content {
         padding: 0 1rem;
     }
+
+    .location-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container iframe {
+        min-height: 350px;
+    }
+}
+
+.weather-updates {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+}
+
+.weather-updates h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.weather-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.current-weather {
+    background: linear-gradient(135deg, #0071e3 0%, #005bb8 100%);
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.weather-header {
+    margin-bottom: 2rem;
+}
+
+.weather-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-location {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.weather-icon {
+    font-size: 4rem;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.conditions {
+    font-size: 1.2rem;
+}
+
+.wind {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.water-conditions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.water-temp, .water-level {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.forecast {
+    padding: 2rem;
+}
+
+.forecast h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(0, 113, 227, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-day .day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.forecast-day i {
+    font-size: 2rem;
+    color: #0071e3;
+}
+
+.forecast-day .temp {
+    color: #4a4a4a;
+}
+
+.forecast-day .wind-speed {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.weather-alert {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(0, 113, 227, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: #4a4a4a;
+    font-size: 0.9rem;
+}
+
+.weather-alert i {
+    color: #0071e3;
+}
+
+@media (max-width: 768px) {
+    .weather-container {
+        grid-template-columns: 1fr;
+    }
+
+    .current-weather {
+        border-radius: 16px 16px 0 0;
+    }
+
+    .forecast-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .weather-alert {
+        padding: 1rem;
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 .safety-checklist {
@@ -500,196 +697,6 @@ button:hover {
     background-color: rgba(0, 113, 227, 0.1);
 }
 
-.map-container {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: white;
-    height: 450px;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-@media (min-width: 1024px) {
-    .location-info {
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-    }
-}
-
-.form-message {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    text-align: center;
-    opacity: 0.9;
-}
-
-.form-message.success {
-    background-color: rgba(0, 255, 0, 0.1);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.form-message.error {
-    background-color: rgba(255, 0, 0, 0.1);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none !important;
-}
-
-.cleanup-event {
-    padding: 4rem 2rem;
-    background: linear-gradient(rgba(0, 113, 227, 0.95), rgba(26, 26, 26, 0.98));
-    color: white;
-}
-
-.calendar-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-date {
-    background: #0071e3;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 200px;
-    position: relative;
-}
-
-.calendar-date::after {
-    content: '';
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 20px solid #0071e3;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-}
-
-.month {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-}
-
-.day {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0.5rem 0;
-}
-
-.year {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.calendar-details {
-    padding: 2.5rem;
-    flex: 1;
-}
-
-.calendar-details h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.event-time {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-.event-highlights {
-    margin: 2rem 0;
-}
-
-.event-highlights p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.event-highlights ul {
-    list-style: none;
-    margin: 1.5rem 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.event-highlights li {
-    padding-left: 1.5rem;
-    position: relative;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.event-highlights li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #0071e3;
-}
-
-.achievement {
-    background: rgba(0, 113, 227, 0.2);
-    padding: 1rem;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-@media (max-width: 768px) {
-    .calendar-container {
-        flex-direction: column;
-    }
-    
-    .calendar-date {
-        padding: 1.5rem;
-    }
-    
-    .calendar-date::after {
-        display: none;
-    }
-    
-    .calendar-details {
-        padding: 1.5rem;
-    }
-    
-    .event-highlights ul {
-        grid-template-columns: 1fr;
-    }
-}
-
 .lake-updates {
     max-width: 1200px;
     margin: 0 auto 6rem;
@@ -705,18 +712,9 @@ button:disabled {
 }
 
 .updates-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.latest-updates h3,
-.rss-subscription h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .update-list {
@@ -725,100 +723,260 @@ button:disabled {
 }
 
 .update-item {
-    background: rgba(0, 113, 227, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .update-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.update-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.update-item:nth-child(1) .update-tag {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.update-item:nth-child(2) .update-tag {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.update-item:nth-child(3) .update-tag {
+    background: #fff3e0;
+    color: #f57c00;
 }
 
 .update-item h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
     color: #1a1a1a;
 }
 
 .update-date {
     font-size: 0.9rem;
     color: #666;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .update-item p:not(.update-date) {
     color: #4a4a4a;
     line-height: 1.6;
-}
-
-.rss-subscription {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 100px;
-}
-
-.rss-subscription p {
-    color: #4a4a4a;
     margin-bottom: 1.5rem;
-    line-height: 1.6;
 }
 
-.rss-subscription .signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.rss-subscription input[type="email"] {
-    background-color: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    color: #1a1a1a;
-}
-
-.rss-subscription input[type="email"]::placeholder {
-    color: #666;
-}
-
-.rss-subscription .subscribe-button {
+.read-more {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    background: #0071e3;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
+    gap: 0.5rem;
+    color: #0071e3;
+    text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
-    width: 100%;
+    font-size: 0.95rem;
+    transition: gap 0.3s ease;
 }
 
-.rss-subscription .subscribe-button:hover {
-    background: #0062c3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+.read-more:hover {
+    gap: 0.75rem;
 }
 
-.rss-subscription .subscribe-button i {
+.rental-info {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 113, 227, 0.1);
+}
+
+.pricing-note {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 113, 227, 0.05);
+    border-radius: 12px;
+    color: #4a4a4a;
     font-size: 1.1rem;
+}
+
+@media (max-width: 767px) {
+    .pricing-note {
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
     .updates-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .rss-subscription {
-        position: static;
+        max-width: 100%;
     }
     
     .lake-updates h2 {
         font-size: 2rem;
+    }
+
+    .update-item {
+        padding: 1.5rem;
+    }
+}
+
+.cleanup-event {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.calendar-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0071e3 0%, #005bb8 100%);
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.calendar-date .month {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-date .day {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-date .year {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.calendar-details {
+    padding: 1rem 0;
+}
+
+.calendar-details h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.event-time {
+    font-size: 1.25rem;
+    color: #0071e3;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.event-highlights {
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+.event-highlights p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.event-highlights ul {
+    list-style-type: none;
+    margin: 1.5rem 0;
+}
+
+.event-highlights li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.event-highlights li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0071e3;
+}
+
+.achievement {
+    font-weight: 600;
+    color: #2e7d32;
+    font-size: 1.1rem;
+}
+
+.rsvp-button {
+    background: #0071e3;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rsvp-button:hover {
+    background: #005bb8;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .calendar-date {
+        padding: 1.5rem;
+        min-width: auto;
+    }
+
+    .calendar-details {
+        padding: 0;
+    }
+
+    .calendar-details h2 {
+        font-size: 1.75rem;
+    }
+
+    .event-time {
+        font-size: 1.1rem;
     }
 } 
